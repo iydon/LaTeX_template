@@ -1,6 +1,22 @@
 \NeedsTeXFormat{LaTeX2e}
 \RequirePackage{graphicx,ifthen}
-\ProvidesPackage{SUSTech}[2018/05/30 v0.1]
+\ProvidesPackage{SUSTech}[2018/07/10 v0.1]
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
 \newcommand\SUSTechKeywords{
 Package SUSTech Keywords:\par
 \begin{itemize}
@@ -29,16 +45,12 @@ Package SUSTech Keywords:\par
 % Combinations
 \newcommand\SUSTechLogCombination[2][width=\textwidth]{
     \ifthenelse{#2=1}{\includegraphics[#1]{combinations/log-ze-lr}}{
-        \ifthenelse{#2=2}{\includegraphics[#1]{combinations/log-ze-ud}}{
-            \ifthenelse{#2=3}{\includegraphics[#1]{combinations/log-zh-lr}}{
-                \ifthenelse{#2=4}{\includegraphics[#1]{combinations/log-zh-ud}}{
-                    \ifthenelse{#2=5}{\includegraphics[#1]{combinations/tor-en-lr}}{
-                        \ifthenelse{#2=6}{\includegraphics[#1]{combinations/tor-en-ud}}{{\huge \centering Coefficient #2{} not in [1, 2, 3, 4, 5, 6]\par}}
-                    }
-                }
-            }
-        }
-    }
+    \ifthenelse{#2=2}{\includegraphics[#1]{combinations/log-ze-ud}}{
+    \ifthenelse{#2=3}{\includegraphics[#1]{combinations/log-zh-lr}}{
+    \ifthenelse{#2=4}{\includegraphics[#1]{combinations/log-zh-ud}}{
+    \ifthenelse{#2=5}{\includegraphics[#1]{combinations/tor-en-lr}}{
+    \ifthenelse{#2=6}{\includegraphics[#1]{combinations/tor-en-ud}}{{
+    \huge\centering Coefficient #2{} not in [1, 2, 3, 4, 5, 6]\par}}}}}}}
 }
 %--------------------------------------------------------------------------------------------------
 \endinput
