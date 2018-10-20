@@ -169,7 +169,7 @@
   \AtEndDocument{%   % =======================
     % thanks
     % =======================
-    \section{Thanks}
+    \section*{Thanks}
     \newcounter{ffn}
     \setcounter{ffn}{\value{framenumber}}
     \renewcommand{\insertframenumber}{\inserttotalframenumber}
