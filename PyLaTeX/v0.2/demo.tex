@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{PyLaTeX, amsmath}
+\pylatexmain{demo}
+\pylatexpycmd{python3}
+\pylatexdoit
+\begin{document}
+\catcode`\%=11
+\pylatex{
+from sympy import *
+x,y = symbols("x,y")
+f = (x+y)**7
+print("$(x+y)^7=%s$"%latex(expand(f)))
+}\catcode`\%=14
+% hello world!
+
+\end{document} 
