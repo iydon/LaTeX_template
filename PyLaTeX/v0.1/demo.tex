@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{PyLaTeX}
+\pylatexmain{demo}
+\pylatexpycmd{python3}
+\pylatexdoit
+\begin{document}
+\begin{pylatex}{
+from math import sqrt
+print("$\sqrt{2}=%.3f$"%sqrt(2))
+}
+\end{pylatex}
+\end{document} 

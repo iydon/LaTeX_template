@@ -1,0 +1,82 @@
+%% 
+%% This is file `PyLaTeX.sty'.
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+\NeedsTeXFormat{LaTeX2e}[1994/12/01]
+\ProvidesPackage{PyLaTeX}[2018/10/27 v0.1 Python LaTeX]
+
+% Require XeTeX to cpmpile
+\RequirePackage{ifxetex}
+\RequireXeTeX
+
+% Python option
+% \newif\ifpytex@donot{\pytex@donotfalse}
+% \DeclareOption{donot}{\pytex@donottrue}
+% \executeOptions{}
+% \ProcessOptions
+
+% PyLaTeX constant
+\def\pytex@main{main}
+\def\pytex@dirname{pylatex}
+\def\pytex@filename{output-}
+\def\pytex@pycmd{python}
+\newcounter{pytex@from}
+
+% set PyLaTeX constant
+\newcommand\pylatexmain[1]{\def\pytex@main{#1}}
+\newcommand\pylatexdirname[1]{\def\pytex@dirname{#1}}
+\newcommand\pylatexfilename[1]{\def\pytex@filename{#1}}
+\newcommand\pylatexpycmd[1]{\def\pytex@pycmd{#1}}
+\newcommand\pylatexdoit{
+    \immediate\write18{\pytex@pycmd\space PyLaTeX.py\space
+        -m\space\pytex@main\space -d\space\pytex@dirname\space
+        -f\space\pytex@filename\space -s\space\arabic{pytex@from}}
+}
+
+% Python code
+\newenvironment{pylatex}[1]{
+    \input{\pytex@dirname/\pytex@filename\arabic{pytex@from}.pytex}
+}{
+    \addtocounter{pytex@from}{1}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\endinput
+%%
+%% End of file `PyLaTeX.sty'.
