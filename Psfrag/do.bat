@@ -1,0 +1,9 @@
+:: psfrag
+latex main.tex
+dvips main.dvi
+ps2pdf main.ps
+:: delete
+del *.aux
+del *.dvi
+del *.log
+del *.ps
