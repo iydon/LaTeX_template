@@ -1,0 +1,68 @@
+\documentclass{ctexart}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{censor}
+
+\def\tipblackout[#1]#2{%
+  \def\blackoutcontent{\blackout{#2}}
+  \begin{animateinline}{7}
+  \parbox{#1}{\blackoutcontent}
+  \newframe*\parbox{#1}{#2}
+  \newframe*\parbox{#1}{\blackoutcontent}
+  \relax
+  \end{animateinline}
+}
+
+\def\tipcolored[#1,#2]#3{
+  \def\coloredcontent{\textcolor{#2}{#3}}
+  \begin{animateinline}{7}
+  \parbox{#1}{\coloredcontent}
+  \newframe*\parbox{#1}{#3}
+  \newframe*\parbox{#1}{\coloredcontent}
+  \relax
+  \end{animateinline}
+}
+
+\begin{document}
+\tipblackout[\textwidth]{A fast Fourier transform (FFT) is an algorithm that samples a signal over a period of time (or space) and divides it into its frequency components. These components are single sinusoidal oscillations at distinct frequencies each with their own amplitude and phase. This transformation is illustrated in Diagram 1. Over the time period measured in the diagram, the signal contains 3 distinct dominant frequencies.}
+
+\vskip 2.5 true cm\relax
+
+\newlength\mywidth
+\settowidth\mywidth{中岁颇好道，晚家南山陲}
+\begin{mdframed}[backgroundcolor=gray!40,shadow=true,roundcorner=8pt]
+\centering
+\tipblackout[\mywidth]{%
+中岁颇好道，晚家南山陲
+兴来每独往，胜事空自知
+行到水穷处，坐看云起时
+偶然值林叟，谈笑无还期}
+\end{mdframed}
+
+\vskip 2.5 true cm\relax
+
+\definecolor{青白}{RGB}{192,235,215}
+\begin{mdframed}[backgroundcolor=青白,shadow=true,roundcorner=8pt]
+\tipcolored[\textwidth,青白]{
+In first-year calculus, we define intervals such
+as $(u, v)$ and $(u, \infty)$. Such an interval
+is a \emph{neighborhood} of $a$
+if $a$ is in the interval. Students should
+realize that $\infty$ is only a
+symbol, not a number. This is important since
+we soon introduce concepts
+such as $\lim_{x \to \infty} f(x)$.\\
+When we introduce the derivative
+\[
+\lim_{x \to a} \frac{f(x) - f(a)}{x - a},
+\]
+we assume that the function is defined and
+continuous in a neighborhood of $a$.
+}
+\end{mdframed}
+
+\end{document}
