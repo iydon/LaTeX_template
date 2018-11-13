@@ -1,0 +1,109 @@
+% -*- coding: UTF-8 -*-
+% 习题与解答环境
+% Leo Liu
+% leoliu.pku@gmail.com
+%\RequirePackage{l3names}
+%\GetIdInfo $Id: latexexercise.sty 304 2012-08-12 05:24:19Z Leo $ {exercise and answer environment}
+%\ProvidesPackage{\ExplFileName}%
+%  [\ExplFileDate\space r\ExplFileVersion\space \ExplFileDescription]
+
+\RequirePackage{graphicx}
+
+\newwrite\ltxex@ansfile
+
+\def\ltxex@ansfilename{\jobname.ans.tex}
+
+\newcounter{exercise}
+\ifdefined\c@chapter
+  \@addtoreset{exercise}{chapter}
+  \def\theexercise{\arabic{chapter}.\arabic{exercise}}
+\else\ifdefined\c@section
+  \@addtoreset{exercise}{section}
+  \def\theexercise{\arabic{section}.\arabic{exercise}}
+\else
+  \def\theexercise{\arabic{exercise}}
+\fi\fi
+
+\def\exercisename{练习}
+
+\newcommand\startexercise{%
+  \immediate\openout\ltxex@ansfile=\ltxex@ansfilename
+  \immediate\write\ltxex@ansfile{\noexpand\begin{answerlist}}}
+\newcommand\stopexercise{%
+  \immediate\write\ltxex@ansfile{\noexpand\end{answerlist}}%
+  \immediate\closeout\ltxex@ansfile}
+\newcommand\printanswer{%
+  \InputIfFileExists{\ltxex@ansfilename}%
+    {\PackageInfo{latexexercise}{answer file `\ltxex@ansfilename' inputed.}}%
+    {\PackageWarning{latexexercise}%
+      {answer file `\ltxex@ansfilename' does not exsist.}}}
+
+\newenvironment{exercise}%
+  {\list{\ltxex@labelstyle\theexercise}%
+     {\ltxex@listargs\normalfont\normalsize}%
+   \ltxex@pre}%
+  {\endlist}
+\newenvironment{answerlist}%
+  {\list{}{\ltxex@anslistargs\normalfont\normalsize}}%
+  {\endlist}
+%
+
+\def\ltxex@pre{\item[]\hskip-\labelsep
+  \llap{\raisebox{-2ex}{\includegraphics[width=3em]{crayon.pdf}}}%
+  \hskip.5em{\large\bfseries\ziju{0.5}\exercisename}}
+\def\ltxex@listargs{%
+  \@nmbrlisttrue\def\@listctr{exercise}%
+  %\topsep=0pt
+  \partopsep=0pt
+  \itemsep=0pt
+  \leftmargin=0pt
+  \rightmargin=0pt
+  \parsep=\parskip
+  \listparindent=\parindent
+  \itemindent=\parindent
+  \labelwidth=0pt
+  \labelsep=0.5em}
+\def\ltxex@labelstyle{\bfseries}
+
+\def\ltxex@anslistargs{%
+  \def\makelabel##1{\ltxex@anslabelstyle ##1}
+  \topsep=0pt
+  \partopsep=0pt
+  \itemsep=0pt
+  \leftmargin=0pt
+  \rightmargin=0pt
+  \parsep=\parskip
+  \listparindent=\parindent
+  \itemindent=\parindent
+  \labelwidth=0pt
+  \labelsep=0.5em}
+\def\ltxex@anslabelstyle{\bfseries}
+
+
+
+%% Update
+\RequirePackage{graphicx,animate,xcolor,tikz}
+\usetikzlibrary{shadows}
+\RequirePackage[framemethod=tikz]{mdframed}
+
+\def\exercise@color{white}
+\newcommand\latexexercisecolor[1]{\def\exercise@color{#1}}
+
+\def\answer#1{
+  \makeatletter
+  % write file
+  \immediate\write\ltxex@ansfile{\noexpand\item[\theexercise] {#1}}
+  % show answer
+  \def\coloredcontent{\textcolor{\exercise@color}{#1}}
+  \begin{mdframed}[backgroundcolor=\exercise@color,shadow=true,roundcorner=8pt]
+    \begin{animateinline}{7}
+    \parbox{\textwidth}{\coloredcontent}
+    \newframe*\parbox{\textwidth}{#1}
+    \newframe*\parbox{\textwidth}{\coloredcontent}
+    \relax
+    \end{animateinline}
+  \end{mdframed}
+  \makeatother
+}
+
+\endinput

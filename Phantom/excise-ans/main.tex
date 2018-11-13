@@ -1,0 +1,59 @@
+\documentclass[openany]{ctexbook}
+\usepackage{epigraph}
+  % 名言引用
+  \renewcommand{\textflush}{flushright}
+  \setlength\epigraphwidth{0.7\linewidth}
+\usepackage{geometry}
+  % 页面设置
+  \geometry{a4paper, margin = 1in}
+\usepackage{ifxetex}
+  % XeTeX编译
+  \RequireXeTeX
+\usepackage{hologo}
+  % TeX家族标志
+\usepackage{lipsum}
+  % 自动生成文字
+\usepackage{latexexercise}
+  % exercise
+\definecolor{青白}{RGB}{192,235,215}
+\latexexercisecolor{青白}
+% information
+\title{宏包测试}
+\author{Iydon}
+\date{\today}
+\begin{document}\startexercise
+\maketitle\clearpage\tableofcontents\clearpage
+
+\chapter{The Name of the Game}
+English words like ‘technology’ stem from a Greek root beginning with the letters $\tau\epsilon\chi\ldots$; and this same Greek word means art as well as technology. Hence the name \TeX\ , which is an uppercase form of $\tau\epsilon\chi$.\par
+Insiders pronounce the $\chi$ of \TeX\ as a Greek chi, not as an ‘x’, so that \TeX\ rhymes with the word blecchhh. It’s the ‘ch’ sound in Scottish words like \emph{loch} or German words like \emph{ach}; it’s a Spanish ‘j’ and a Russian ‘kh’. When you say it correctly to your computer, the terminal may become slightly moist.\par
+The purpose of this pronunciation exercise is to remind you that \TeX\ is primarily concerned with high-quality technical manuscripts: Its emphasis is on art and technology, as in the underlying Greek word. If you merely want to produce a passably good document---something acceptable and basically readable but not really beautiful---a simpler system will usually suffice. With \TeX\ the goal is to produce the \emph{finest} quality; this requires more attention to detail, but you will not find it much harder to go the extra distance, and you’ll be able to take special pride in the finished product.\par
+On the other hand, it's important to notice another thing about \TeX's name: The \emph{`E'} is out of kilter. This displaced \emph{`E'} is a reminder that \TeX\ is about typesetting, and it distinguishes \TeX\ from other system names. In fact, TEX(pronounced \emph{tecks}) is the admirable \emph{Text EXecutive} processor developed by Honeywell Information Systems. Since these two system names are pronounced quite differently, they should also be spelled differently. The correct way to refer to \TeX\ in a computer file, or when using some other medium that doesn't allow lowering of the \emph{`E'}, is to type \emph{`TeX'}. Then there will be no confusion with similar names, and people will be primed to pronounce everything properly.
+\begin{exercise}
+  \item After you have mastered the material in this book, what will you be: A \TeX pert, or as \TeX nician?
+    \answer{A \Hologo{TeX}nician (underpaid); sometimes also called a \Hologo{TeX}acker.}
+\end{exercise}
+\epigraph{\sl They do certainly give\\very strange and new-fangled names to diseases.}{PLATO, The Republic, Book 3 (c. 375 B.C.)}
+\epigraph{\sl Technique! The very word is like the shriek\\Of outraged Art. It is the idiot name\\Given to effort by those who are too weak,\\Too weary, or too dull to play the game.}{LEONARD BACON, Sophia Trenton (1920)}
+
+\chapter{Book Printing versus Ordinary Typing}
+\lipsum[1]
+\begin{exercise}
+  \item Explain how to type the following sentence to \TeX: Alice said, ``I always use an en-dash instead of a hyphen when specifying page numbers like `480--491' in a bibliography.''\par
+    \answer{Alice said, `$\,$`I always use an en-dash instead of a hyphen when specifying page numbers like `480-$\,$-491' in a bibliography.'$\,$' (The wrong answer to this question ends with '480-491' in a bibliography.'')}
+  \item What do you think happens when you type four hyphens in a row?\par
+    If you look closely at most well-printed books, you will find that certain combinations of letters are treated as a unit. For example, this is true of the `f' and the `i' of `find'. Such combinations are called \emph{ligatures}, and professional typesetters have traditionally been trained to watch for letter combinations such as {\bf ff}, {\bf fi}, {\bf fl}, {\bf ffi}, and {\bf ffl}. (The reason is that words like `find' don't look very good in most styles of type unless a ligature is substituted for the letters that clash. It's somewhat surprising how often the traditional ligatures appear in English; other combinations are important in other languages.)
+    \answer{You get em-dash and hyphen (----), which looks awful.}
+\end{exercise}
+\epigraph{\sl In modern Wit all printed Trash, is\\Set off with num’rous Breaks---andDashes---}{JONATHAN SWIFT, On Poetry: A Rapsody (1733)}
+\epigraph{\sl Some compositors still object to work\\in offices where type-composing machines are introduced.}{WILLIAM STANLEY JEVONS, Political Economy (1878)}
+
+
+
+\stopexercise
+\chapter{Answers to All the Exercises}
+The preface to this manual points out the wisdom of trying to figure out each exercise before you look up the answer here. But these answers are intended to be read, since they occasionally provide additional information that you are best equipped to understand when you have just worked on a problem.
+
+\printanswer
+
+\end{document} 
