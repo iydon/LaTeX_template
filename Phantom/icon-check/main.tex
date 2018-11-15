@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{animate,fontawesome}
+\newlength\icontextwidth
+\def\coloredicon[#1]#2#3{%
+  % #1:color, #2:text, #3:icon
+  \settowidth\icontextwidth{#2}
+  \begin{animateinline}{7}
+  \parbox{\icontextwidth}{#3}
+  \newframe*\parbox{\icontextwidth}{#2}
+  \newframe*\parbox{\icontextwidth}{#3}
+  \relax
+  \end{animateinline}
+}
+\def\icon#1#2{\coloredicon[white]{$\backslash$#1}{#2}}
+\begin{document}
+
+\verb|\usepackage{fontawesome}|
+
+% \immediate\write18{python3\space icon.py}
+\input{icon.tex}
+
+\end{document}
