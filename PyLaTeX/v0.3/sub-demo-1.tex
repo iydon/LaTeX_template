@@ -1,0 +1,8 @@
+\pylatex{
+from sympy import *
+x,y = symbols("x,y")
+f = lambda n: (x+y)**n
+for i in range(7):
+    print("$(x+y)^%d=%s$"%(i+1, latex(expand(f(i+1)))))
+    print()
+}
