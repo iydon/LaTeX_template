@@ -1,16 +1,16 @@
-\documentclass{standalone}
-\usepackage{PyLaTeX, amsmath}
-\pylatexmain{demo}
+\documentclass{article}
+\usepackage{PyLaTeX}
+\pagestyle{empty}
 \pylatexpycmd{python3}
 \pylatexdoit
 \begin{document}
-\catcode`\%=11
 \pylatex{
 from sympy import *
 x,y = symbols("x,y")
-f = (x+y)**7
-print("$(x+y)^7=%s$"%latex(expand(f)))
-}\catcode`\%=14
+f = lambda n: (x+y)**n
+for i in range(7):
+    print("$(x+y)^%d=%s$"%(i+1, latex(expand(f(i+1)))))
+    print()
+}
 % hello world!
-
-\end{document} 
+\end{document}

@@ -25,14 +25,13 @@
 % \ProcessOptions
 
 % PyLaTeX constant
-\def\pytex@main{main}
+\def\pytex@main{\jobname}
 \def\pytex@dirname{pylatex}
 \def\pytex@filename{output-}
 \def\pytex@pycmd{python}
 \newcounter{pytex@from}
 
 % set PyLaTeX constant
-\newcommand\pylatexmain[1]{\def\pytex@main{#1}}
 \newcommand\pylatexdirname[1]{\def\pytex@dirname{#1}}
 \newcommand\pylatexfilename[1]{\def\pytex@filename{#1}}
 \newcommand\pylatexpycmd[1]{\def\pytex@pycmd{#1}}
@@ -42,10 +41,15 @@
         -f\space\pytex@filename\space -s\space\arabic{pytex@from}}
 }
 
+\newcommand\makepercentletter{\catcode`\%=11}
+\newcommand\makepercentother{\catcode`\%=14}
+
 % Python code
 \newcommand\pylatex[1]{
+    \makepercentletter
     \input{\pytex@dirname/\pytex@filename\arabic{pytex@from}.pytex}
     \addtocounter{pytex@from}{1}
+    \makepercentother
     % \catcode`\{=1
     % \catcode`\}=2
     % \catcode`\$=3
