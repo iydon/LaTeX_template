@@ -1,0 +1,34 @@
+% !Mode:: "TeX:UTF-8"
+
+% ------- Packages -------
+\usepackage{palatino}    % Palatino/Helvetica/TXTT and Greek replacements
+\usepackage{lipsum}      % 生成测试文本
+\usepackage{hologo}      % TeX符号
+\usepackage{amsthm}      % Theorem
+    \newtheorem{thm}{Theorem}[section]
+    \newtheorem{cor}{Corollary}[section]
+    \newtheorem{defn}{Definition}[section]
+\usepackage{fontawesome} % 图标
+\usepackage{hyperref}    % 超链接
+
+% ------- Symbols -------
+\input{cfgs/preamble-symbols-femabbr}
+
+% ------- Command and Definition -------
+% 正文摘要和控制页摘要名字修改
+\def\abstractname{Abstract}
+\def\sheetsummaryname{Summary}
+
+% ------- Information -------
+\mcmsetup{CTeX = false,         % 使用 CTeX 套装时，设置为 true
+        tcn = 0710,             % 队伍控制号码
+        problem = A,            % 选题
+        sheet = true,           % 摘要页
+        titleinsheet = true,    % 摘要页中的标题
+        keywordsinsheet = true, % 摘要页中的关键字
+        titlepage = true,       % 标题页
+        abstract = true         % 标题页中的摘要
+}
+\title{The \LaTeX{} Template for MCM Version \MCMversion}
+\author{Iydon, Svégio, Xylocis}
+\date{\today}

@@ -1,0 +1,48 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass{mcmthesis}
+% Configurations
+\input{cfgs/preamble}  % 导言区
+\input{patch/patch}    % Warning补丁
+\begin{document}
+
+\input{sections/0_Sheetsummary_abstract_keywords}
+\maketitle
+% Generate the Table of Contents, if it's needed.
+\tableofcontents\newpage
+
+% Examples.
+\input{examples/examples}
+
+\section{Introduction}
+    \input{sections/1_Introduction}
+\section{Analysis of the Problem}
+    \input{sections/2_Analysis_of_problem}
+
+\section{Calculating and Simplifying the Model}
+    \input{sections/3_Calculating_and_simplifying_the_model}
+
+\section{The Model Results}
+    \input{sections/4_Model_results}
+
+\section{Validating the Model}
+    \input{sections/5_Validating_the_model}
+
+\section{Conclusions}
+    \input{sections/6_Conclusions}
+
+\section{A Summary}
+    \input{sections/7_A_summary}
+
+\section{Evaluate of the Mode}
+    \input{sections/8_Evaluation_of_model}
+
+\section{Strengths and weaknesses}
+    \input{sections/9_Strengths_and_weaknesses}
+
+\input{sections/others/1_Bibliography}
+
+\begin{appendices}
+    \input{sections/others/2_Appendices}
+\end{appendices}
+
+\end{document}
