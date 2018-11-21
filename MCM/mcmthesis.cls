@@ -34,6 +34,7 @@
 \RequirePackage{xkeyval}
 \RequirePackage{etoolbox}
 \define@boolkey{MCM}[MCM@opt@]{CTeX}[false]{}
+\define@boolkey{MCM}[MCM@opt@]{XeTeX}[false]{}
 \define@boolkey{MCM}[MCM@opt@]{titlepage}[true]{}
 \define@boolkey{MCM}[MCM@opt@]{abstract}[true]{}
 \define@boolkey{MCM}[MCM@opt@]{sheet}[true]{}
@@ -80,6 +81,9 @@
 \RequirePackage{hyperref}
 \RequirePackage{ifpdf, ifxetex}
 \AtBeginDocument{
+\ifMCM@opt@XeTeX
+  \RequireXeTeX
+\fi
 \ifMCM@opt@CTeX
 \else
   \RequirePackage{environ}

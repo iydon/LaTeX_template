@@ -2,14 +2,17 @@
 
 % ------- Packages -------
 \usepackage{palatino}    % Palatino/Helvetica/TXTT and Greek replacements
-\usepackage{lipsum}      % 生成测试文本
-\usepackage{hologo}      % TeX符号
-\usepackage{amsthm}      % Theorem
+\usepackage{lipsum}        % 生成测试文本
+\usepackage{hologo}        % TeX符号
+\usepackage{amsthm}        % Theorem
     \newtheorem{thm}{Theorem}[section]
     \newtheorem{cor}{Corollary}[section]
     \newtheorem{defn}{Definition}[section]
-\usepackage{fontawesome} % 图标
-\usepackage{hyperref}    % 超链接
+\usepackage{fontawesome}   % 图标
+\usepackage{hyperref}      % 超链接
+\usepackage{PyLaTeX}       % Python
+    \pylatexpycmd{python3} % Python cmd name
+    \pylatexdoit
 
 % ------- Symbols -------
 \input{cfgs/preamble-symbols-femabbr}
@@ -27,7 +30,8 @@
         titleinsheet = true,    % 摘要页中的标题
         keywordsinsheet = true, % 摘要页中的关键字
         titlepage = true,       % 标题页
-        abstract = true         % 标题页中的摘要
+        abstract = true,        % 标题页中的摘要
+        XeTeX = true,           % XeTeX编译
 }
 \title{The \LaTeX{} Template for MCM Version \MCMversion}
 \author{Iydon, Svégio, Xylocis}
