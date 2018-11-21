@@ -57,7 +57,7 @@ def extract_content(file_name):
                     elif line[idx] == "}":
                         count -= 1
                 if not count:
-                    globals()["cmds"].append(result+line[:idx])
+                    globals()["cmds"].append(result+line[:idx+1])
                     result = ""
                     continue
                 result += line[:idx+1]
