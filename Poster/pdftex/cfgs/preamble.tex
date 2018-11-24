@@ -1,0 +1,44 @@
+%  ------- Packages -------
+\usepackage{graphicx}
+    \graphicspath{{figures/}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{enumitem} % Used to reduce itemize/enumerate spacing
+\usepackage{palatino} % Use the Palatino font
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{multicol}
+    \setlength{\columnsep}{1.5em} % Slightly increase the space between columns
+    \setlength{\columnseprule}{0mm} % No horizontal rule between columns
+\usepackage{tikz} % Required for flow chart
+    \usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
+
+
+
+%  ------- Symbols -------
+\input{cfgs/preamble-symbols-femabbr}
+
+
+
+% ------- Commands and Definition -------
+\newcommand{\compresslist}{% Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
+\setlength{\itemsep}{1pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+}
+
+\definecolor{bgcolor}{RGB}{5,169,171} % Defines the color used for content box headers: \definecolor{bgcolor}{rgb}{0.145,0.6666,1}
+
+
+
+%  ------- Information -------
+\logo{
+    \includegraphics[height=4em]{logo-school-zh.pdf}
+}{
+    \includegraphics[height=4em]{SUSTeX.pdf}
+}
+\title{Unnecessarily Complicated Research Title}
+\author{\{ John Smith, James Smith and Jane Smith \} \hspace{12pt} University and Department Name}
+
+\colorfromto{bgcolor}{black!23}
+\titlecolor{white}

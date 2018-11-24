@@ -1,0 +1,181 @@
+\newcommand\ci{%
+
+Donec non nisl a \textbf{arcu consequat} varius. Sed suscipit cursus luctus. Nulla sit amet elit augue. Curabitur scelerisque mollis dolor, quis blandit lorem condimentum at. Pellentesque sed nibh vel \textbf{dolor} sagittis semper.
+
+\begin{enumerate}\compresslist
+\item Feugiat vitae elit
+\item bibendum ante sed lacinia eros in
+\item Curabitur scelerisque arcu consequat varius
+\item Dapibus nulla id purus consectetur
+\item Fringilla integer
+\end{enumerate}
+
+\vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
+}
+
+
+
+\newcommand\cii{%
+
+Aliquam non lacus dolor, \textit{a aliquam quam}. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla in nibh mauris. Donec vel ligula nisi, a lacinia arcu. Sed mi dui, malesuada vel consectetur et, egestas porta nisi. Sed eleifend pharetra dolor, et dapibus est vulputate eu. \textbf{Integer faucibus elementum felis vitae fringilla.} In hac habitasse platea dictumst. Duis tristique rutrum nisl, nec vulputate elit porta ut. Donec sodales sollicitudin turpis sed convallis. Etiam mauris ligula, blandit adipiscing condimentum eu, dapibus pellentesque risus.
+}
+
+
+
+\newcommand\ciii{%
+
+\begin{multicols}{2}
+\vspace{1em}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{placeholder}
+\captionof{figure}{Figure caption}
+\end{center}
+
+Aliquam auctor, metus id ultrices porta, risus enim cursus sapien, quis iaculis sapien tortor sed odio. Mauris ante orci, euismod vitae tincidunt eu, porta ut neque. Aenean sapien est, viverra vel lacinia nec, venenatis eu nulla. Maecenas ut nunc nibh, et tempus libero. Aenean vitae risus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
+\end{multicols}
+
+%------------------------------------------------
+
+\begin{multicols}{2}
+\vspace{1em}
+Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ut elit sit amet metus lobortis consequat sit amet in libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel sem magna. Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu.
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{placeholder}
+\captionof{figure}{Figure caption}
+\end{center}
+
+\end{multicols}
+}
+
+
+
+\newcommand\civ{%
+
+\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
+\nocite{*} % Insert publications even if they are not cited in the poster
+\small{ % Reduce the font size in this block
+\bibliographystyle{unsrt}
+\bibliography{sample} % Use sample.bib as the bibliography file
+}}
+
+
+
+\newcommand\cv{%
+
+\begin{multicols}{2}
+Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
+
+Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendisse mollis iaculis sem, in \emph{imperdiet} orci porta vitae. Quisque id dui sed ante sollicitudin sagittis.
+\end{multicols}
+}
+
+
+
+\newcommand\cvi{%
+
+\begin{description}\compresslist
+\item[Web] www.university.edu/smithlab
+\item[Email] john@smith.com
+\item[Phone] +1 (000) 111 1111
+\end{description}
+}
+
+
+
+\newcommand\cvii{%
+
+\begin{multicols}{2}
+
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=2cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse, fill=red!20, node distance=3cm, minimum height=2em]
+
+\begin{tikzpicture}[node distance = 2cm, auto]
+\node [block] (init) {Initialize Model};
+\node [cloud, left of=init] (Start) {Start};
+\node [cloud, right of=init] (Start2) {Start Two};
+\node [block, below of=init] (init2) {Initialize Two};
+\node [decision, below of=init2] (End) {End};
+\path [line] (init) -- (init2);
+\path [line] (init2) -- (End);
+\path [line, dashed] (Start) -- (init);
+\path [line, dashed] (Start2) -- (init);
+\path [line, dashed] (Start2) |- (init2);
+\end{tikzpicture}
+
+%------------------------------------------------
+
+\begin{itemize}\compresslist
+\item Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Phasellus fermentum rutrum elementum. Nam quis justo lectus.
+\item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
+\item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
+\item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
+\end{itemize}
+
+\end{multicols}
+}
+
+
+
+\newcommand\cviii{%
+
+The following materials were required to complete the research:
+
+\begin{itemize}\compresslist
+\item Curabitur pellentesque dignissim
+\item Eu facilisis est tempus quis
+\item Duis porta consequat lorem
+\item Eu facilisis est tempus quis
+\end{itemize}
+
+The following equations were used for statistical analysis:
+
+\begin{equation}
+\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
+\label{eq:refname}
+\end{equation}\
+
+\begin{equation}
+E = mc^{2}
+\label{eqn:Einstein}
+\end{equation}
+
+Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
+}
+
+
+
+\newcommand\cix{%
+
+Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan.
+
+\begin{center}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\captionof{table}{Table caption}
+\end{center}
+
+Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo.
+
+\begin{center}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\captionof{table}{Table caption}
+\end{center}
+}

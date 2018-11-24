@@ -1,0 +1,87 @@
+\documentclass[landscape,a0paper,fontscale=0.285]{baposter} % Adjust the font scale/size here
+
+\input{cfgs/poster}
+\input{cfgs/preamble}
+\input{contents}
+
+\begin{document}
+
+\iffalse
+:reference
+┌─┐
+│ │
+└─┘
+:layout
+┌─┐┌─┐┌───┐
+└1┘└2┘|   |
+┌─┐┌─┐└3──┘
+| || |┌───┐
+└4┘└5┘└6──┘
+┌─┐┌───┐┌─┐
+└7┘└8──┘└9┘
+\fi
+
+\begin{postech}
+
+% ------- OBJECTIVES -------
+\headerbox{Objectives}{name=objectives,column=0,row=0}{
+\ci
+}
+
+
+
+% ------- INTRODUCTION -------
+\headerbox{Introduction}{name=introduction,column=1,row=0,bottomaligned=objectives}{
+\cii
+}
+
+
+
+% ------- RESULTS 1 -------
+\headerbox{Results 1}{name=results,column=2,span=2,row=0}{
+\ciii
+}
+
+
+% ------- REFERENCES -------
+\headerbox{References}{name=references,column=0,above=bottom}{
+\civ
+}
+
+
+
+% ------- FUTURE RESEARCH -------
+\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
+\cv
+}
+
+
+
+% ------- CONTACT INFORMATION -------
+\headerbox{Contact Information}{name=contact,column=3,aligned=references,above=bottom}{ % This block is as tall as the references block
+\cvi
+}
+
+
+% ------- CONCLUSION -------
+\headerbox{Conclusion}{name=conclusion,column=2,span=2,row=0,below=results,above=references}{
+\cvii
+}
+
+
+
+% ------- MATERIALS AND METHODS -------
+\headerbox{Materials \& Methods}{name=method,column=0,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+\cviii
+}
+
+
+
+% ------- RESULTS 2 -------
+\headerbox{Results 2}{name=results2,column=1,below=objectives,bottomaligned=conclusion}{ % This block's bottom aligns with the bottom of the conclusion block
+\cix
+}
+
+\end{postech}
+
+\end{document}
