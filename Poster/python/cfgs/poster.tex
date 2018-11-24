@@ -1,0 +1,47 @@
+% Poster environment
+\makeatletter
+% TITLE PAGE
+\def\@logoleft{\includegraphics[height = 4em]{logo-school-en.pdf}}
+\def\@logoright{\includegraphics[height = 4em]{logo-department-en.pdf}}
+\def\@title{HELLO WORLD!}
+\def\@author{Iydon}
+% COLOR
+\def\@colorfrom{white}
+\def\@colorto{white}
+\def\@titlecolor{white}
+
+\newcommand\logo[2]{\def\@logoleft{#1}\def\@logoright{#2}}
+\newcommand\colorfromto[2]{\def\@colorfrom{#1}\def\@colorto{#2}}
+\newcommand\titlecolor[1]{\def\@titlecolor{#1}}
+
+
+\newenvironment{postech}
+{\begin{poster}{
+        headerborder = closed,          % Adds a border around the header of content boxes
+        colspacing = 1em,               % Column spacing
+        bgColorOne = white,             % Background color for the gradient on the left side of the poster
+        bgColorTwo = white,             % Background color for the gradient on the right side of the poster
+        borderColor = \@colorto,        % Border color
+        headerColorOne = \@colorfrom,   % Background color for the header in the content boxes (left side)
+        headerColorTwo = \@colorto,     % Background color for the header in the content boxes (right side)
+        headerFontColor = \@titlecolor, % Text color for the header text in the content boxes
+        boxColorOne = white,            % Background color of the content boxes
+        textborder = roundedleft,       % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
+        eyecatcher = true,              % Set to false for ignoring the left logo in the title and move the title left
+        headerheight = 0.1\textheight,  % Height of the header
+        headershape = roundedright,     % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
+        headerfont = \Large\bf\textsc,  % Large, bold and sans serif font in the headers of content boxes
+        linewidth = 2pt                 % Width of the border lines around content boxes
+        % textfont = {\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
+    }
+    %----------------------------------------------------------------------------------------
+    %    TITLE SECTION
+    %----------------------------------------------------------------------------------------
+    %
+    {\@logoleft} % First university/lab logo on the left
+    {\bf\textsc{\@title}\vspace{0.5em}} % Poster title
+    {\textsc{\@author}} % Author names and institution
+    {\@logoright} % Second university/lab logo on the right
+}
+{\end{poster}}
+\makeatother
