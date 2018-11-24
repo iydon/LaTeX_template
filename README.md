@@ -22,4 +22,6 @@
 - Organized from [GitHub](https://github.com/Liam0205/mcmthesis).
 
 ## Poster
-- TODO
+- Organized from [GitHub](https://github.com/anriseth/baposter).
+- Inspired by visualization.
+
