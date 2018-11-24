@@ -1,4 +1,4 @@
-\documentclass[a0paper,fontscale=0.285]{baposter} % Adjust the font scale/size here
+\documentclass[landscape,a0paper,fontscale=0.285]{baposter} % Adjust the font scale/size here
 
 \input{cfgs/poster}
 \input{cfgs/preamble}
@@ -12,15 +12,13 @@
 └─┘
 }
 :layout{
-┌─┐┌─┐┌─┐
-└1┘└2┘| |
-┌────┐└4┘
-|    |┌─┐
-└──3─┘| |
-┌────┐| |
-└6───┘└5┘
-┌─┐┌─┐┌─┐
-└7┘└9┘└8┘
+┌─┐┌─┐┌───┐
+└1┘└2┘|   |
+┌─┐┌─┐└3──┘
+| || |┌───┐
+└4┘└5┘└6──┘
+┌─┐┌───┐┌─┐
+└7┘└8──┘└9┘
 }
 :name{
 1: Objectives
@@ -100,9 +98,12 @@ Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci lu
 
 
 \newcommand\posterviii{%
+
+\begin{multicols}{2}
 Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
 
 Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendisse mollis iaculis sem, in \emph{imperdiet} orci porta vitae. Quisque id dui sed ante sollicitudin sagittis.
+\end{multicols}
 }
 
 
