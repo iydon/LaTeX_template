@@ -1,0 +1,91 @@
+\documentclass{ctexart}
+\pagestyle{empty}
+%-----------------------
+% 20180625
+\usepackage{amsmath}
+% similar to 'sideset', it can follow non-mathematical operator.
+\newcommand\sideseter[3]{\let\tmp\nolimits\let\nolimits\relax\sideset{#1}{#2}{#3}\let\nolimits\tmp\let\tmp\relax}
+% 20180630
+\usepackage{minted} % xelatex -shell-escape
+% new environment: matlab, or you can specific other languages.
+\newenvironment{matlab}
+    {\VerbatimEnvironment\begin{minted}
+        [mathescape, linenos, numbersep=5pt,
+        gobble=2, %Remove the first n characters from each input line.
+        frame=lines, escapeinside=||,
+        frame=single, xleftmargin=0em, xrightmargin=0em]{matlab}}
+    {\end{minted}}
+% 20180723
+\newcommand{\plus}{\raisebox{1pt}{+}}
+% \newcommand{\plus}{\tikz{\draw[thin](0,0.15)--(0.3,0.15);\draw[thin](0.15,0)--(0.15,0.3);}} % \RequirePackage{tikz}
+%-----------------------
+% 20180806
+\input{matlabcode}
+%-----------------------
+% 20180806
+\usepackage[framemethod=tikz]{mdframed}
+\usetikzlibrary{calc}
+\definecolor{DarkBlue}{rgb}{.11,.23,.60}
+\mdfdefinestyle{commandline}%
+{leftmargin=5pt, rightmargin=10pt,innerleftmargin=15pt,
+	middlelinecolor=DarkBlue,
+	middlelinewidth=2pt,
+	frametitlerule=false,
+	backgroundcolor=white,%black!10!white,
+    roundcorner=3pt,
+	frametitle={Command Window},
+	frametitlefont={\normalfont\sffamily\color{white}\hspace{-1em}},
+	frametitlebackgroundcolor=DarkBlue,
+	singleextra={\draw[black!10,line width=12pt]
+		($(O)+(7pt,1pt)$) -- ($(O|-P)+(7pt,-\mdfframetitleboxtotalheight)-(0,1pt)$);
+		\node[inner sep=0pt,color=black]at ($(O|-P)+(7pt,-25pt)$)%
+		{$\scriptstyle f\!x$}; },
+	nobreak,
+}
+\lstnewenvironment{script} {%
+	\lstset{language=Matlab,basicstyle=\tiny\ttfamily,breaklines=true,%
+        frame=,frameround=,
+		escapeinside = ``,tabsize=2,
+        showstringspaces=falsei，
+		aboveskip=0pt,belowskip=0pt}}{}
+\surroundwithmdframed[style=commandline]{script}
+%-----------------------
+\begin{document}
+%-----------------------
+% 20180625
+$\sideseter{_1^2}{_3^4}{\Sigma}\sideset{_1^2}{_3^4}{\sum}$
+%-----------------------
+% 20180630
+\begin{matlab}
+f = @(n)plot(fft(eye(n)));
+% 正n边形
+\end{matlab}
+%-----------------------
+% 20180723
+A\plus
+%-----------------------
+% 20180723
+\begin{lstlisting}
+f = @(n)plot(fft(eye(n)));
+% 正n边形
+\end{lstlisting}
+%-----------------------
+% 20180806
+\begin{script}
+fft - 快速傅里叶变换
+
+    此 MATLAB 函数 用快速傅里叶变换 (FFT) 算法计算 X 的离散傅里叶变换 (DFT)。 如果 X 是向量，则 fft(X) 返回该向量的傅里叶变换。
+    如果 X 是矩阵，则 fft(X) 将 X 的各列视为向量，并返回每列的傅里叶变换。 如果 X 是一个多维数组，则 fft(X) 将沿大小不等于 1
+    的第一个数组维度的值视为向量，并返回每个向量的傅里叶变换。
+
+    Y = fft(X)
+    Y = fft(X,n)
+    Y = fft(X,n,dim)
+
+    See also fft2, fftn, fftshift, fftw, ifft
+
+    Reference page in Doc Center
+       doc fft
+\end{script}
+%-----------------------
+\end{document} 
