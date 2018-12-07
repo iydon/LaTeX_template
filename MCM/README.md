@@ -4,7 +4,7 @@ Organized from [GitHub](https://github.com/Liam0205/mcmthesis). Since *mcmthesis
 
 # 解释
 - **cfgs**: 配置
-- **codes**: 插入代码
+- **code**: 插入代码
 - **doc**: *mcmthesis*自带文档
 - **examples**: 例子
 - **figures**: 图片
@@ -18,7 +18,7 @@ Organized from [GitHub](https://github.com/Liam0205/mcmthesis). Since *mcmthesis
 	│   ├── preamble-symbols-femabbr.tex
 	│   └── preamble.tex
 	├── clear.py
-	├── codes
+	├── code
 	│   ├── mcmthesis-matlab.m
 	│   ├── mcmthesis-python.py
 	│   └── mcmthesis-sudoku.CPP
