@@ -1,6 +1,6 @@
 # LaTeX MCM Template
 
-Organized from [GitHub](https://github.com/Liam0205/mcmthesis).
+Organized from [GitHub](https://github.com/Liam0205/mcmthesis). Since *mcmthesis* is included by *TeX Live*, I will not attach the code, you can find it from the [website](https://ctan.org/pkg/mcmthesis).
 
 # 解释
 - **cfgs**: 配置
