@@ -1,0 +1,12 @@
+\documentclass{beamer}
+\usepackage{animate}
+\newcommand\includegif[3]{
+    % #1:file_name, #2:frame_rate, #3:last
+    \immediate\write18{convert\space #1.gif\space -coalesce\space #1.png}
+    \animategraphics[loop,controls,width=.5\linewidth]{#2}{#1-}{0}{#3}
+}
+\begin{document}
+\begin{frame}{GIF}
+\includegif{gif/wink}{12}{15}
+\end{frame}
+\end{document}
