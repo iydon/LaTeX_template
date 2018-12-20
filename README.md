@@ -25,5 +25,5 @@
 - Organized from [GitHub](https://github.com/anriseth/baposter).
 - Inspired by visualization.
 
-## HeatMap
-- Inspired by [LaTeX Studio](http://www.latexstudio.net/archives/460.html).
+## Toys
+- Toys.
