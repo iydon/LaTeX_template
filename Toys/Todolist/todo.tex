@@ -1,0 +1,33 @@
+\documentclass{article}
+% 宏包
+\usepackage{exerquiz}
+    \useMCCircles % 选项带框
+    \sqTurnOffAlerts % 提醒取消
+    \sqDefaultFmtTitle{\textcolor{Gold}{To-do List}} % 修改名称
+\usepackage{geometry}
+    \geometry{margin=1in}
+\usepackage{xcolor}
+    \definecolor{Gold}{rgb}{.81,.71,.23}
+% 命令
+\newcounter{todolist}
+\newcommand\todolist[1]{
+    \item {#1}
+    \begin{answers}{2}
+        \Ans1Finished & \Ans0Unfinished  \\
+    \end{answers}
+    Comment:\par
+    \TextField[name=Q\arabic{todolist}, width=.9\textwidth,height=5ex,bordercolor={0.650 .790 .94}]{}
+    \addtocounter{todolist}{1}
+}
+\begin{document}
+
+\begin{shortquiz}
+    \today
+    \begin{questions}
+        \todolist{Review \emph{Mathematical Statistics and Data Analysis}.}
+        \todolist{Review \emph{Applied Stochastic Processes}.}
+        \todolist{Do not learn \LaTeX when reviewing.}
+    \end{questions}
+\end{shortquiz}
+
+\end{document}
