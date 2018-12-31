@@ -1,0 +1,10 @@
+% XeLaTeX Compiler
+\documentclass{standalone}
+\usepackage{tikzsymbols}
+\renewcommand\Springtree[1][]{%
+    \tikzsymbolsuse{BasicTree}[#1]{black}{green!71!black}{green}{leaf}
+}
+% \usepackage{fontspec}\setmainfont{EBGaramond08-Italic}
+\begin{document}
+\ \Springtree[3]\parbox[b]{2.5em}{Bonne\\ann\'ee.}
+\end{document}

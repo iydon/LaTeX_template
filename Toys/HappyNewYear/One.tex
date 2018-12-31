@@ -1,0 +1,27 @@
+% XeLaTeX Compiler
+\documentclass{standalone}
+\usepackage{tikzsymbols}
+\usepackage[xetex]{insdljs}
+\renewcommand\Springtree[1][]{%
+    \tikzsymbolsuse{BasicTree}[#1]{black}{green!71!black}{green}{leaf}
+}
+\begin{insDLJS}[test]{test}{JavaScript}
+var flag = true;
+function happy(){
+    if (flag) {
+        this.getField("bonne").value = "  Happy  ";
+        this.getField("annee").value = "New Year";
+        flag = false;
+    } else {
+        this.getField("bonne").value = "";
+        this.getField("annee").value = "";
+        flag = true;
+    }
+}
+\end{insDLJS}
+\begin{document}
+\ \PushButton[name=happy,onclick={happy();}]{\Springtree[4.5]}
+\parbox[b]{4.8em}{%
+\TextField[name=bonne,width=4.8em,height=3.5ex,bordercolor={1 1 1},readonly=true]{}\\
+\TextField[name=annee,width=4.8em,height=3.5ex,bordercolor={1 1 1},readonly=true]{}}
+\end{document}
