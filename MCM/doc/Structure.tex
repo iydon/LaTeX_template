@@ -1,19 +1,19 @@
 %!TEX program = xelatex
 \documentclass[openany]{ctexbook}
-\usepackage[margin=1in]{geometry}
 \usepackage{lipsum}
 \usepackage{fontspec}
     \setmainfont{Times New Roman}
 \usepackage{tcolorbox}
     \newenvironment{example}{\begin{tcolorbox}[title=Example]}{\end{tcolorbox}}
 \usepackage{enumerate}
+\usepackage{hyperref}
 \begin{document}
 \tableofcontents\clearpage
 
 
-\chapter{小节划分}
+\chapter{论文结构}
     \section*{Summary}
-    \lipsum[1]
+    \lipsum[1] % Overfull \hbox
 
     \section{Restatement of the Problem}
     引言应该包括以下内容:
@@ -79,12 +79,73 @@
     \lipsum[10]
 
 
-\chapter{写作提示}
+\chapter{写作规范}
+    \section{排版提示}
     \begin{itemize}
         \item 将论文划分小节时, 应避免在小节中出现大段的文字叙述.
         \item 首次定义的概念, 应该用黑体或斜体书写. 但在突出重点的前提下应可能少用黑体或斜体.
         \item 重要的数学公式应另起新行单独列出.
         \item 建模所用的假设条件以及所有可以用列表方式表述的内容, 应用列表的方式逐条陈列出来.
         \item 在使用图表的时候要给每个图表加上简单明确的文字说明.
+    \end{itemize}
+
+    \section{写作规范}
+    \begin{itemize}
+        \item 使用第一人称复数代词.\footnote{撰写MCM论文时应注意避免使用第二或第三人称代词, 也不要使用第一人称单数代词.}
+        \item 使用简单时态.
+        \item 使用主动语态.
+        \item 些简单的句子.\footnote{位于应该紧跟在主语之后, 中间最好不要再包含副词或状语.}
+        \item 写简短的段落.
+        \item 使用有具体含义的词汇.\footnote{使用有具体含义的词汇能够将意思表达得更清楚, 应避免使用多一次或抽象词.}
+        \item 不含琐碎细节.
+        \item 突出重点.
+        \item 删除多余词汇.
+        \item 使用并列短语强调相似性.\footnote{If $a$ is a root of the function $f$, then $b$ is a root of the function $g$.}
+        \item 避免单调重复.
+        \item 不使用同一词汇描述不同的对象.
+        \item 代词所指的名词必须清楚.
+        \item 不过分渲染.\footnote{将结果以叙事的方式告诉读者, 不作任何评论, 由读者自己判断结果的重要性.}
+    \end{itemize}
+
+    \section{英语用法}
+    \begin{itemize}
+        \item 保持主谓一致.
+        \item 正确使用\emph{that}和\emph{which}.\footnote{经验: 只要\emph{that}听起来顺耳, 就是用\emph{that}.}
+        \item 避免拼写错误.
+        \item 用无争议的代词.
+        \item 正确使用冠词(\emph{the}, \emph{a}及\emph{an}).
+        \item 常用动词.\footnote{\emph{Compare to}与\emph{compare with}, \emph{study}与\emph{investigate}, \emph{seek}与\emph{explore}, \emph{design}与\emph{devise}, \emph{tackle}与\emph{solve}, \emph{approach}与\emph{propose}.}
+    \end{itemize}
+
+    \section{符号与图表}
+    \begin{itemize}
+        \item 选择合适的字体与字号.\footnote{Times New Roman.}
+        \item 不在论文标题中使用数学符号.
+        \item 符号的常规使用.\emph{采用常规用法有助于阅读和理解, 例如数学变量符号字母的常规用法是斜体.}
+        \item 避免一符多用.
+        \item 不用符号取代文字.
+        \item 用文字书写作为形容词的数字.\footnote{There are three solutions.}
+        \item 避免不必要的上下标.
+        \item 保持符号一致.
+        \item 保持下标顺序一致.
+        \item 删除只用过一次的符号.
+        \item 图形和表格.\footnote{数据量较小时, 用表格比较合适. 数据量较大时, 用图形比较合适.}
+    \end{itemize}
+
+    \section{数学表达式和句子}
+    \begin{itemize}
+        \item 不用数学符号作为句号的开头.
+        \item 句中多次出现的同一符号读法要一致.
+        \item 标点符号与阅读的连贯性.
+        \item 用文字分割相邻的表达式.\footnote{Since $a=2$, we have $a^2=4$.}
+        \item 以文字叙述为主.
+        \item 不要超负荷使用同一词汇.
+        \item 每一个\emph{if}都应该与一个\emph{then}匹配.
+        \item 提供必要的提示.
+        \item 主语应该在即将使用时定义.\footnote{A function is \textbf{smooth} if it is infinitely differentiable. Suppose that $f$ is a smooth function.}
+        \item 如何排列数学表达式.\footnote{行间公式: x/y.}
+        \item 如何书写分数.
+        \item 数学表达式的断行与对齐.
+        \item 省略号的对齐.\footnote{$x_1,x_2,\ldots,x_n$与$x_1+x_2+\cdots+x_n$.}
     \end{itemize}
 \end{document}
