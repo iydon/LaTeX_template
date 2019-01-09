@@ -2,35 +2,78 @@
 \documentclass[openany]{ctexbook}
 \usepackage[margin=1in]{geometry}
 \usepackage{lipsum}
+\usepackage{fontspec}
+    \setmainfont{Times New Roman}
+\usepackage{tcolorbox}
+    \newenvironment{example}{\begin{tcolorbox}[title=Example]}{\end{tcolorbox}}
+\usepackage{enumerate}
 \begin{document}
+\tableofcontents\clearpage
+
+
 \chapter{小节划分}
     \section*{Summary}
     \lipsum[1]
 
     \section{Restatement of the Problem}
-    \lipsum[2]
+    引言应该包括以下内容:
+    \begin{itemize}
+    	\item 对赛题的解读.
+    	\item 对现有研究成果的综述与评价.
+    	\item 对解题思路和主要方法的简要介绍.
+    \end{itemize}
+    参赛小组首先要用自己的语言重述赛题, 明确解题目标, 并澄清原题叙述上可能出现的模糊概念.
+    \begin{example}
+        There are at least two notions of where the sweet spot should be --- an impact location on the bat that either
+        \begin{itemize}
+        	\item minimizes the discomfort to the hands, or
+        	\item maximizes the outgoing velocity of the ball.
+        \end{itemize}
+        We focus exclusively on the second definition.
+    \end{example}
+    即便是已经表述得很精确的概念, 仍可以给出更有利于解题的解读方式.
+    \begin{example}
+        We interpret the error of $\pm 2^\circ$ as a normal distribution, $\ldots$ with standard deviation of $1^\circ$.
+    \end{example}
+
 
     \section{Assumptions}
-    \lipsum[3]
+    合理的数学模型应基于合理的假设, 所以在描述模型之前, 参赛小组应该将模型设计所用的假设条件一一列出并解释清楚. 此外, 还应该对建模的初衷和动机适当地加以讨论. 参赛小组在论文中都应该明确列出所有用到的假设条件, 并解释其合理性.
+    \begin{example}
+        \textbf{Criminal's movement is unconstrained}. Because of the difficulty of finding real-world distance data, we invoke the ``Manhattan assumption'': There are enough streets and sidewalks in a sufficiently grid-like pattern that movements along real-world movement routes is the same as ``straight-line'' movement in a space discretized into city blocks $\ldots$
+    \end{example}
 
     \section{Justification of Our Approach}
     \lipsum[4]
 
     \section{The Model}
-        \subsection{lipsum}
-        \lipsum[5]
+    设计的模型能够解决问题才是最重要的. \textbf{在所有能解决问题的模型中, 最简单的模型也许就是最好的模型.}
+        \subsection{系列模型}
+        设计模型时, 可以尝试从简单模型开始, 逐步加工, 修改及完善, 一次比一次更接近实际, 最终得到能完满地解答赛题的模型.
+        \begin{example}
+            \begin{enumerate}[(1)]
+                \item 首先建立模型: 常温模型. 这个模型假设全球温度不变, 冰盖的融化速度不变及海洋水量不变.
+                \item 接着建立模型: 变温模型. 这个模型假设全球温度在不断变化.
+                \item 最后建立模型: 气候变暖下的海洋水量模型. 这个模型将前面建立的模型中所忽略的问题考虑进来, 包括南北两半球的相对海洋水面面积.
+            \end{enumerate}
+        \end{example}
 
-        \subsection{lipsum}
-        \lipsum[6]
+        \subsection{普遍模型}
+        不要只针对赛题给出的参数值设计模型. 高水平的论文通常会把赛题看成是一个普遍问题的特例, 首先探讨普遍问题的求解, 然后再对赛题的这一特例给出具体解答.
+        \begin{example}
+            We have produced a general algorithm to solve this type of problem, but for out problem a relationship exists that greatly simplified the algorithm
+        \end{example}
 
     \section{Testing the Model}
-    \lipsum[7]
+    参赛小组应该对所建立的数学模型进行敏感性分析和稳定性测试, 是模型更具有说服力. 模型通常会用到一些参数(例如, 交通建模问题可能会用到平均速度这一参数), 在结论中应该讨论这些参数值的轻微变化对模型及结论产生的影响.
 
     \section{Results}
-    \lipsum[8]
+    在描述结论时, 应设法使读者认同论文给出的解答, 尽管该解答不一定是最好的. 测试时应极可能使用真实的数据, 避免因为人造数据而引起读者对结论的怀疑.\par
+    在描述结果时一定要给出足够的信息, 是的如果有必要, 读者自己也能得到相同的结果. 如果参赛小组自己编写了程序代码, 则应将程序运行的算法描述清楚.
 
     \section{Strengths and Weaknesses}
-    \lipsum[9]
+    由于时间的限制, 几乎每篇论文给出的模型和解答都会存在这样或那样的缺陷. 评委肯定也会发现这些缺陷, 所以在写结论时应该明确指出这些缺陷, 标明参赛小组不但知道模型所含的缺陷, 而且也思考过如何改进和修补. 论文缺陷在前面描述模型时可能已经提到过, 在这里应该再次指出来.\par
+    写论文时也应该明确指出, 假如有充足的时间和计算资源, 参赛小组将能够解决问题.
 
     \section*{References}
     \lipsum[10]
