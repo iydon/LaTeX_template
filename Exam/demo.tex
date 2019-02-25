@@ -1,0 +1,26 @@
+\documentclass{exam} % 无正确答案
+\input{cfgs/preamble}
+    % 使用到宏包如下:
+    % ifxetex, ifluatex, ifthen, ctex, xcolor, mathtools, amssymb, hyperref
+    % 定义新命令如下:
+    % \ansarea[1], tf[1]
+    % 定义新环境如下:
+    % solarea[0]
+\input{fonts/fonts}
+    % 鉴于字体各平台上不尽相同, 所以将字体单独提取出来, 不导入不会产生额外错误.
+\input{cfgs/info}
+    % 文档信息
+\input{cfgs/todo}
+    % 未仔细看的命令
+\begin{document}
+\tableofcontents\clearpage % 目录
+
+\section{选择题}
+    \input{data/Q1}
+
+\section{填空题}
+    \input{data/Q2}
+
+\section{简答题}
+    \input{data/Q3}
+\end{document} 

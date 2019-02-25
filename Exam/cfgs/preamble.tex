@@ -1,0 +1,35 @@
+% 导言区
+\usepackage{ifxetex,ifluatex}
+\usepackage{ifthen}
+    % 使用XeLaTeX或者LuaLaTeX编译.
+    \ifthenelse{\boolean{xetex}\OR\boolean{luatex}}{}{
+        \errmessage{You Should Use XeLaTeX or LuaLaTeX To Compile}
+    }
+\usepackage{ctex}
+    % 使用中文.
+\usepackage{xcolor}
+    % 使用颜色.
+\usepackage{mathtools,amssymb}
+    % keyval, calc, mhsetup, amsmath, graphicx, amssymb
+\usepackage{hyperref}
+    % 超链接
+
+% 定义命令
+\newcommand\ansarea[1]{\makeemptybox{#1}}
+    % 采用ansarea接口, 设置答题区样式, 方便后期进行加框等操作.
+    % \vspace{#1}: 单纯空白.
+    % \fillwithlines{#1}: 通过行线填充.
+    % \fillwithdottedlines{#1}: 通过虚线行线填充.
+    % \fillwithgrid{#1}: 通过格子填充.
+    % \makeemptybox{#1}: 外面套盒子.
+\newcommand\tf[1][{}]{\fillin[#1][0.25in]}
+    % True or False 题型 .
+
+% 定义环境
+\newenvironment{solarea}%
+    {\begin{solutionorbox}[2in]}%
+    {\end{solutionorbox}}
+    % 采用solarea接口, 设置答案样式, 方便后期进行加框等操作.
+    % exam文类其他可用环境:
+    % solutionorbox, solutionorlines
+    % solutionordottedlines, solutionorgrid

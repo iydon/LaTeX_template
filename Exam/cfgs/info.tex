@@ -1,0 +1,38 @@
+% 信息
+% 标题, 作者, 日期
+\title{MA206 Midterm}
+\author{Iydon}
+\date{\today}
+
+% 页眉和页脚
+\pagestyle{headandfoot}
+    % 页眉
+    \firstpageheader{MA206}{Midterm}{\today}
+    % \runningheadrule % 页眉线
+    \runningheader{}{}{}
+    % 页脚
+    \firstpagefooter{}{}{}
+    \runningfooter{MA206}%
+        {Midterm, Page \thepage\ of \numpages}%
+        {\today}
+    \runningfootrule % 页脚线
+
+% 分数位置与样式
+    % 位置
+    % \pointsinleftmargin % 分数位于左边沿
+    % \pointsinrightmargin % 分数位于右边沿
+    % 样式
+    % \bracketedpoints % 分数位于括号中
+    % \boxedpoints % 分数位于盒子中
+    \pointpoints{分}{分} % 单复数
+    \bonuspointpoints{分(附加)}{分(附加)} % 附加分单复数
+
+% 答案信息
+\printanswers % 打印正确答案
+\CorrectChoiceEmphasis{\color{black}\bfseries} % 正确答案样式
+\checkboxchar{$\Box$} % 选择框样式
+\checkedchar{$\blacksquare$} % 正确选择框样式
+\shadedsolutions % 答案是否存在填充颜色(与边框二选一)
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1} % 修改答案填充颜色
+% \framedsolutions % 答案是否存在边框(与颜色二选一)
+\renewcommand{\solutiontitle}{\noindent\textbf{答案:}\par\noindent} % 答案名称 
