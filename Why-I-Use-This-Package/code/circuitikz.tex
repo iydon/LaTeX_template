@@ -1,0 +1,12 @@
+\documentclass{article}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+    \ctikzset{label/align = rotate}
+    \def\DIR{0,45,90,135,180,-90,-45,-135}
+    \foreach \i in \DIR {
+        \draw (0,0) to[R=\i, *-o] (\i:2.5);
+    }
+\end{circuitikz}
+% 绘制电路图
+\end{document}

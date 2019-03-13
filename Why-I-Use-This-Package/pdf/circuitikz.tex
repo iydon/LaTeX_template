@@ -1,0 +1,26 @@
+
+\documentclass[AutoFakeBold,AutoFakeSlant]{ctexart}
+\usepackage{tcolorbox}
+    \tcbuselibrary{listings}
+        \newtcblisting{latexbox}[1]%
+            {colback=white,colframe=blue!50!white,fonttitle=\bfseries,%
+             listing options={basicstyle=\ttfamily,%
+             language={TeX},breaklines},title=\texttt{#1}}
+    \usepackage{geometry}
+        \geometry{margin=1in}
+\pagestyle{empty}
+% Packages
+\usepackage{circuitikz}
+\begin{document}
+\begin{latexbox}{circuitikz}
+% \usepackage{circuitikz}
+\begin{circuitikz}
+    \ctikzset{label/align = rotate}
+    \def\DIR{0,45,90,135,180,-90,-45,-135}
+    \foreach \i in \DIR {
+        \draw (0,0) to[R=\i, *-o] (\i:2.5);
+    }
+\end{circuitikz}
+% 绘制电路图
+\end{latexbox}
+\end{document}

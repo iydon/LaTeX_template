@@ -1,0 +1,20 @@
+
+\documentclass[AutoFakeBold,AutoFakeSlant]{ctexart}
+\usepackage{tcolorbox}
+    \tcbuselibrary{listings}
+        \newtcblisting{latexbox}[1]%
+            {colback=white,colframe=blue!50!white,fonttitle=\bfseries,%
+             listing options={basicstyle=\ttfamily,%
+             language={TeX},breaklines},title=\texttt{#1}}
+    \usepackage{geometry}
+        \geometry{margin=1in}
+\pagestyle{empty}
+% Packages
+\usepackage{lipsum}
+\begin{document}
+\begin{latexbox}{lipsum}
+% \usepackage{lipsum}
+\lipsum[1]
+% 生成随机文本用于测试
+\end{latexbox}
+\end{document}
