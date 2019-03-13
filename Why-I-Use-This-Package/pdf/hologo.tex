@@ -1,0 +1,21 @@
+
+\documentclass[AutoFakeBold,AutoFakeSlant]{ctexart}
+\usepackage{tcolorbox}
+    \tcbuselibrary{listings}
+        \newtcblisting{latexbox}[1]%
+            {colback=white,colframe=blue!50!white,fonttitle=\bfseries,%
+             listing options={basicstyle=\ttfamily,%
+             language={TeX},breaklines},title=\texttt{#1}}
+    \usepackage{geometry}
+        \geometry{margin=1in}
+\pagestyle{empty}
+% Packages
+\usepackage{hologo}
+\begin{document}
+\begin{latexbox}{hologo}
+% \usepackage{hologo}
+\hologo{pdfLaTeX}, \hologo{XeLaTeX}, \hologo{LuaLaTeX}.
+% \LaTeX\ 软件常用标识输入宏包
+% 此外还有bxtexlogo宏包
+\end{latexbox}
+\end{document}

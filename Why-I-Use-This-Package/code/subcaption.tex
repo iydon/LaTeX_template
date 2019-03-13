@@ -1,0 +1,19 @@
+\documentclass{ctexart}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\begin{document}
+\begin{figure}[H]
+    \centering
+    \subcaptionbox{\emph{A}\label{F:example-a}}%
+        {\includegraphics[width=.3\textwidth]{example-image-a}}
+    \subcaptionbox{\emph{B}\label{F:example-b}}%
+        {\includegraphics[width=.3\textwidth]{example-image-b}}
+    \subcaptionbox{\emph{C}\label{F:example-c}}%
+        {\includegraphics[width=.3\textwidth]{example-image-c}}
+    \caption{示例图片}\label{F:example}
+\end{figure}
+根据图~\ref{F:example-a}至图~\ref{F:example-c}, 我们可以得出结论, 当没有适当图片但是想测试插图效果, 可以使用\emph{graphicx}提供的示例图片进行测试.
+% 处理图像并排
+% 浮动体不建议使用H选项
+\end{document}

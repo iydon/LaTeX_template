@@ -1,0 +1,29 @@
+
+\documentclass[AutoFakeBold,AutoFakeSlant]{ctexart}
+\usepackage{tcolorbox}
+    \tcbuselibrary{listings}
+        \newtcblisting{latexbox}[1]%
+            {colback=white,colframe=blue!50!white,fonttitle=\bfseries,%
+             listing options={basicstyle=\ttfamily,%
+             language={TeX},breaklines},title=\texttt{#1}}
+    \usepackage{geometry}
+        \geometry{margin=1in}
+\pagestyle{empty}
+% Packages
+\usepackage{tikz-cd}
+\begin{document}
+\begin{latexbox}{tikz-cd}
+% \usepackage{tikz-cd}
+\begin{tikzcd}
+    T
+    \arrow[drr, bend left, "x"]
+    \arrow[ddr, bend right, "y"]
+    \arrow[dr, dotted, "{(x,y)}" description] & & \\
+        & X \times_Z Y \arrow[r, "p"] \arrow[d, "q"]
+            & X \arrow[d, "f"] \\
+        & Y \arrow[r, "g"]
+            & Z
+\end{tikzcd}
+% 绘制交换图, 自定义详见文档
+\end{latexbox}
+\end{document}

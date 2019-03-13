@@ -1,0 +1,22 @@
+
+\documentclass[AutoFakeBold,AutoFakeSlant]{ctexart}
+\usepackage{tcolorbox}
+    \tcbuselibrary{listings}
+        \newtcblisting{latexbox}[1]%
+            {colback=white,colframe=blue!50!white,fonttitle=\bfseries,%
+             listing options={basicstyle=\ttfamily,%
+             language={TeX},breaklines},title=\texttt{#1}}
+    \usepackage{geometry}
+        \geometry{margin=1in}
+\pagestyle{empty}
+% Packages
+\usepackage{enumerate}
+\begin{document}
+\begin{latexbox}{enumerate}
+% \usepackage{enumerate}
+\begin{enumerate}[A.]
+    \item Hello
+    \item World
+\end{enumerate}
+\end{latexbox}
+\end{document}
