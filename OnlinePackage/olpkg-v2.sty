@@ -1,0 +1,38 @@
+% Provide command `useonlinepackage{<package name>}{<url>}'.
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{olpkg}
+    [2019/03/17 v0.1]
+
+\RequirePackage{ifplatform}
+    \newcommand\crossplatformcommand[3]{
+        % Windows, Linux, Macosx.
+        \ifshellescape
+            \ifwindows #1\fi
+            \iflinux   #2\fi
+            \ifmacosx  #3\fi
+        \else
+            \errmessage{You should use *--shell-escape* option when compiling.}
+        \fi
+    }
+
+\newcommand\useonlinepackage@win[2]{%
+    \IfFileExists{#1.sty}{}{\immediate\write18{curl -O #2}}
+    % \input{|"curl -q #1"}
+}
+\newcommand\useonlinepackage@lin[2]{%
+    \IfFileExists{#1.sty}{}{\immediate\write18{wget #2}}
+    % \input{|"wget -q -O - #1"}
+}
+\newcommand\useonlinepackage@mac[1]{%
+    \errmessage{TODO!}
+}
+\newcommand\useonlinepackage[2]{%
+    \crossplatformcommand{\useonlinepackage@win{#1}{#2}}%
+                         {\useonlinepackage@lin{#1}{#2}}%
+                         {\useonlinepackage@mac{#1}{#2}}%
+    \usepackage{#1}
+}
+
+\endinput
+%%
+%% End of file `olpkg.sty'.
