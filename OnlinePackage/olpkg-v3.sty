@@ -17,19 +17,19 @@
     }
 
 % inputonline
-\newcommand\inputoneline@win[1]{%
+\newcommand\inputonline@win[1]{%
     \input{|"curl -q #1"}
 }
-\newcommand\inputoneline@lin[1]{%
+\newcommand\inputonline@lin[1]{%
     \input{|"wget -q -O - #1"}
 }
-\newcommand\inputoneline@mac[1]{%
+\newcommand\inputonline@mac[1]{%
     \errmessage{TODO!}
 }
-\newcommand\inputoneline[1]{%
-    \crossplatformcommand{\inputoneline@win{#1}}%
-                         {\inputoneline@lin{#1}}%
-                         {\inputoneline@mac{#1}}%
+\newcommand\inputonline[1]{%
+    \crossplatformcommand{\inputonline@win{#1}}%
+                         {\inputonline@lin{#1}}%
+                         {\inputonline@mac{#1}}%
 }
 
 % useonlinepackage
