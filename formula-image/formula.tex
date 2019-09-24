@@ -1,0 +1,44 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex --shell-escape
+% ------------------- Config -------------------
+\newcommand{\formulasize}{512}
+\newcommand{\formuladensity}{1024}
+\newcommand{\formulaoutext}{.png}
+\newcommand{\formulapreamble}{
+    \usepackage{amsmath,unicode-math,physics,tensor}
+        \unimathsetup{math-style=ISO, bold-style=ISO, mathrm=sym}
+        \setsansfont{FiraGO}[BoldFont=* SemiBold, Numbers=Monospaced]
+        \setmathfont{Fira Math Regular}
+}
+\newcommand{\formulabody}{
+    \[
+      \nabla \symbf{X} = \tensor{X}{^\alpha_{;\beta}} \pdv{x^\alpha} \otimes \dd{x^\beta}
+                       = \qty(\tensor{X}{^\alpha_{,\beta}} + \Gamma^{\alpha}_{\beta\gamma} \, X^\gamma) \,
+                         \pdv{x^\alpha} \otimes \dd{x^\beta}
+    \]
+}
+
+
+% ------------------- Main Body -------------------
+\documentclass[
+    preview,
+    convert={
+        ghostscript,
+        size = \formulasize,
+        density = \formuladensity,
+        outext = \formulaoutext,
+    },
+]{standalone}
+    % enable `--shell-escape`
+    \usepackage{ifplatform}
+        \ifshellescape\else
+            \errmessage{You should use `--shell-escape` option when compiling.}
+        \fi
+    % basic math packages
+    \usepackage{amsmath,amssymb}
+    % personal customization
+    \formulapreamble
+\begin{document}
+% personal customization
+\formulabody
+\end{document}

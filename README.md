@@ -31,6 +31,10 @@
 ## Fonts
 - 字体测试.
 
+## formula-image
+Convert LaTeX formula to image by document-class `standalone`.
+![](formula-image/formula.png)
+
 ## Toys
 - Toys.
 
