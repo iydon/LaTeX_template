@@ -1,0 +1,12 @@
+ \documentclass{article}
+\usepackage{eforms}
+\newcommand{\upgrade}[1]{
+	\pushButton[\CA{Check Upgrade}\AC{Upgrading...}\RC{Require Upgrade}
+		\A{/S/URI/URI(#1)}]{name1}{}{10bp}
+}
+\begin{document}
+\title{Check Upgrade}
+\author{Iydon \upgrade{http://www.svegio.top/cv/}}
+
+\maketitle
+\end{document}

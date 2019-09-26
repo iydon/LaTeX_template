@@ -15,3 +15,6 @@
 
 # HappyNewYear
 - Simple greetings.
+
+# Check-upgrade
+- Check upgrade (fake)
