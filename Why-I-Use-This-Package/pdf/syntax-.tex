@@ -10,17 +10,24 @@
         \geometry{margin=1in}
 \pagestyle{empty}
 % Packages
-\usepackage{circuitikz}
+\usepackage{fancybox}\input{syntax}
 \begin{document}
-\begin{latexbox}{circuitikz}
-% \usepackage{circuitikz}
-\begin{circuitikz}
-    \ctikzset{label/align = rotate}
-    \def\DIR{0,45,90,135,180,-90,-45,-135}
-    \foreach \i in \DIR {
-        \draw (0,0) to[R=\i, *-o] (\i:2.5);
+\begin{latexbox}{syntax-}
+% \usepackage{fancybox}\input{syntax}
+\begin{Syntaxdiagramm}
+ \Wiederholung{
+    \Alternative{
+      \Stapel{\TerSym{Setzen}}
+             {\TerSym{Sie}}
+    }{\begin{Alternativen}
+        {\TerSym{Das}}
+        {\TerSym{Hand}}
+        \SynVarR{einmal}\\  
+        \SynVarR{von}\\
+      \end{Alternativen}
     }
-\end{circuitikz}
-% 绘制电路图
+  }{\SynVar{!!!!}
+}
+\end{Syntaxdiagramm}
 \end{latexbox}
 \end{document}
