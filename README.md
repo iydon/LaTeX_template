@@ -8,6 +8,9 @@
 ## PyLaTeX
 - Inspired by *LuaLaTeX*.
 
+## Software Requirements Specification (SRS)
+- [English LaTeX Template](https://github.com/jpeisenbarth/SRS-Tex)
+
 ## Psfrag
 - LaTeX Package.
 - .tex -> .dvi -> .ps -> .pdf
