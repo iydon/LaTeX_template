@@ -1,0 +1,242 @@
+% \iffalse meta-comment
+% vim: textwidth=75
+%<*internal>
+\iffalse
+%</internal>
+%<*readme>
+|
+-------:| -----------------------------------------------------------------
+SUSTech:| A LaTeX package for SUSTech logo
+ Author:| Iydon Liang
+ E-mail:| liangiydon@gmail.com
+License:| Released under the LaTeX Project Public License v1.3c or later
+    See:| http://www.latex-project.org/lppl.txt
+
+
+Short description:
+LaTeX package **SUSTech** provides SUSTech logos.
+%</readme>
+%<*internal>
+\fi
+\def\nameofplainTeX{plain}
+\ifx\fmtname\nameofplainTeX\else
+  \expandafter\begingroup
+\fi
+%</internal>
+%<*install>
+\input docstrip.tex
+\keepsilent
+\askforoverwritefalse
+\preamble
+-------:| -----------------------------------------------------------------
+SUSTech:| A LaTeX package for SUSTech logo
+ Author:| Iydon Liang
+ E-mail:| liangiydon@gmail.com
+License:| Released under the LaTeX Project Public License v1.3c or later
+    See:| http://www.latex-project.org/lppl.txt
+
+\endpreamble
+\postamble
+
+Copyright (C) 2019 by (Iydon Liang) <(liangiydon@gmail.com)>
+
+This work may be distributed and/or modified under the
+conditions of the LaTeX Project Public License (LPPL), either
+version 1.3c of this license or (at your option) any later
+version.  The latest version of this license is in the file:
+
+http://www.latex-project.org/lppl.txt
+
+This work is "maintained" (as per LPPL maintenance status) by
+(Iydon Liang).
+
+This work consists of the file SUSTech.dtx and a Makefile.
+Running "make" generates the derived files README, SUSTech.pdf and SUSTech.sty.
+Running "make inst" installs the files in the user's TeX tree.
+Running "make install" installs the files in the local TeX tree.
+
+\endpostamble
+
+\usedir{tex/latex/SUSTech}
+\generate{
+  \file{\jobname.sty}{\from{\jobname.dtx}{package}}
+}
+%</install>
+%<install>\endbatchfile
+%<*internal>
+\usedir{source/latex/SUSTech}
+\generate{
+  \file{\jobname.ins}{\from{\jobname.dtx}{install}}
+}
+\nopreamble\nopostamble
+\usedir{doc/latex/SUSTech}
+\generate{
+  \file{README.txt}{\from{\jobname.dtx}{readme}}
+}
+\ifx\fmtname\nameofplainTeX
+  \expandafter\endbatchfile
+\else
+  \expandafter\endgroup
+\fi
+%</internal>
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{SUSTech.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\ProvidesPackage{SUSTech}
+%<*package>
+    [2019/11/26 v1.00 A LaTeX package for SUSTech logo]
+%</package>
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage[a4paper,margin=25mm,left=50mm,nohead]{geometry}
+\usepackage[numbered]{hypdoc}
+\usepackage{\jobname}
+\usepackage{ctex}
+\usepackage{xcolor}
+\newcommand{\highlight}[1]{\textcolor[HTML]{FF9900}{#1}}
+\newcommand{\pkg}[1]{\texttt{#1}}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{\jobname.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \GetFileInfo{\jobname.dtx}
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+%\title{\textsf{SUSTech} --- A LaTeX package for SUSTech logo\thanks{This file
+%   describes version \fileversion, last revised \filedate.}
+%}
+%\author{Iydon Liang\thanks{E-mail: (liangiydon@gmail.com)}}
+%\date{Released \filedate}
+%
+%\maketitle
+%
+% \changes{v0.1}{2018/10/20}{First public release}
+% \changes{v0.2}{2019/11/26}{Convert file format from STY to DTX}
+%
+% \begin{abstract}
+% \pkg{SUSTech} 宏包 (下称本宏包) 提供了南方科技大学的各种标识, 有关标识的使用基本操作规范请参考 \href{www.sustc.edu.cn/upload/files/00School/logo/南方科技大学标识使用基本操作规范.rar}{官方文档}\footnote{本链接采用学校旧域名 \texttt{sustc.edu.cn}, 而最新域名为 \texttt{sustech.edu.cn}, 因此本链接很有可能失效, 如果您发现此类情况, 请在 \texttt{GitHub} 提出 \href{https://github.com/Iydon/LaTeX_template/issues}{Issues}.}.
+% \end{abstract}
+%
+% \section{使用指南}
+%
+% 南科大的标识分为单个元素及组合元素两类, 因此定义两个宏来表示以上两类, 同时定义一个关键词提醒的宏:
+% \begin{itemize}
+% \item 单个元素: \verb|\SUSTechE[<parameters>]{<number>}|;
+% \item 组合元素: \verb|\SUSTechC[<parameters>]{<number>}|;
+% \item 关键词提醒: \verb|\SUSTechK|.
+% \end{itemize}
+%
+% \SUSTechK
+%
+%\StopEventually{^^A
+%  \PrintChanges
+%  \PrintIndex
+%}
+%
+% \section{实现原理}
+%
+%    \begin{macrocode}
+%<*package>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<!COPYRIGHT>
+\ProvidesFile{SUSTech.dtx}[%
+%<!DATE>
+%<!VERSION>
+%<*DRIVER>
+    2099/01/01 develop
+%</DRIVER>
+    Package to support SUSTech logo]
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\RequirePackage{graphicx}
+\RequirePackage{enumitem}
+\RequirePackage{tcolorbox}
+    \tcbuselibrary{listings}
+%    \end{macrocode}
+%
+% 关键词提醒:
+%    \begin{macrocode}
+\newcommand{\SUSTech@Temp}[2]{
+    \begin{tcolorbox}[split=0.5]
+        \small\texttt{\textbackslash SUSTech#1[width=\textbackslash textwidth]\{#2\}}
+    \tcblower
+        \csname SUSTech#1\endcsname[width=\textwidth]{#2}
+    \end{tcolorbox}
+}
+\newcommand{\SUSTechK}{\highlight{%
+    \section{\texttt{SUSTech} Package keywords}
+        \subsection{Element}\noindent
+            \begin{minipage}{.53\textwidth}
+                \SUSTech@Temp{E}{1}
+            \end{minipage}
+            \begin{minipage}{.47\textwidth}
+                \SUSTech@Temp{E}{2}
+                \SUSTech@Temp{E}{3}
+                \SUSTech@Temp{E}{4}
+            \end{minipage}
+            \begin{minipage}{.5\textwidth}
+                \SUSTech@Temp{E}{5}
+            \end{minipage}
+        \subsection{Combination}\noindent
+            \begin{minipage}{.45\textwidth}
+                \SUSTech@Temp{C}{1}
+                \SUSTech@Temp{C}{3}
+            \end{minipage}
+            \begin{minipage}{.55\textwidth}
+                \SUSTech@Temp{C}{2}
+            \end{minipage}
+            \begin{minipage}{.52\textwidth}
+                \SUSTech@Temp{C}{4}
+            \end{minipage}
+            \begin{minipage}{.48\textwidth}
+                \SUSTech@Temp{C}{6}
+            \end{minipage}
+            \SUSTech@Temp{C}{5}
+}}
+%    \end{macrocode}
+%
+% 单个元素标识:
+%    \begin{macrocode}
+\newcommand{\SUSTechE}[2][width=\textwidth]{%
+    \ifcase#2\or%
+        \includegraphics[#1]{E/SUSTech-fig}\or%
+        \includegraphics[#1]{E/SUSTech-text-en}\or%
+        \includegraphics[#1]{E/SUSTech-text-en-abbrev}\or%
+        \includegraphics[#1]{E/SUSTech-text-zh}\or%
+        \includegraphics[#1]{E/SUSTech-torch}\else%
+        \SUSTechK%
+    \fi}
+%    \end{macrocode}
+%
+% 组合元素标识:
+%    \begin{macrocode}
+\newcommand\SUSTechC[2][width=\textwidth]{%
+    \ifcase#2\or%
+        \includegraphics[#1]{C/logo-ze-lr}\or%
+        \includegraphics[#1]{C/logo-ze-ud}\or%
+        \includegraphics[#1]{C/logo-zh-lr}\or%
+        \includegraphics[#1]{C/logo-zh-ud}\or%
+        \includegraphics[#1]{C/torch-en-lr}\or%
+        \includegraphics[#1]{C/torch-en-ud}\or%
+    \fi}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\endinput
+%</package>
+%    \end{macrocode}
+%
+%
+%\Finale
